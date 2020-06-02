@@ -15,6 +15,12 @@ class HomeFragment :Fragment() {
 
     var mViewModel:MainViewModel?=null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mViewModel=ViewModelProvider(this).get(MainViewModel::class.java)
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,7 +28,6 @@ class HomeFragment :Fragment() {
     ): View? {
 
        val mView= DataBindingUtil.inflate<FragmentHomeBinding>(inflater, R.layout.fragment_home,container,false)
-        mViewModel=ViewModelProvider(this).get(MainViewModel::class.java)
         return mView.root
     }
 
