@@ -21,35 +21,13 @@ class MainActivity :AppCompatActivity() {
     }
 
 
-
     private fun mInitView() {
-//        bottom_navigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
         val mFragment: Fragment? = HomeFragment()
         mChangeFragment(mFragment!!, false)
 
     }
 
-
-    var navigationItemSelectedListener: BottomNavigationView.OnNavigationItemSelectedListener =
-        object : BottomNavigationView.OnNavigationItemSelectedListener {
-            override fun onNavigationItemSelected(@NonNull item: MenuItem): Boolean {
-
-                supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-
-                when (item.itemId) {
-                    R.id.navigation_home -> {
-                        val mFragment: Fragment? = HomeFragment()
-                        mChangeFragment(mFragment!!, false)
-                        return true
-                    }
-
-                }
-                return false
-            }
-        }
-
-
-    fun mChangeFragment(fragment: Fragment, isAddToBack: Boolean) {
+    private fun mChangeFragment(fragment: Fragment, isAddToBack: Boolean) {
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frameLayout, fragment, fragment.javaClass.name)
