@@ -13,14 +13,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity :AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mInitView()
+
     }
 
+
+
     private fun mInitView() {
-        bottom_navigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
+//        bottom_navigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener)
+        val mFragment: Fragment? = HomeFragment()
+        mChangeFragment(mFragment!!, false)
+
     }
 
 

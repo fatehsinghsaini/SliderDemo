@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 object RestApiFactory {
 
-    val BASE_URL = "https://56.octallabs.com/shiops"
+    val BASE_URL = " https://qa-doctor.medcords.com/mhc/"
 
  fun mCreate():RestApi{
 
